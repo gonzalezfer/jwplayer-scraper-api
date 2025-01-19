@@ -1,14 +1,15 @@
 const express = require('express');
 const jwplayerScraper = require('jwplayer-scraper');
+const cors = require('cors');  // Agregar CORS
 
 const app = express();
-app.use(express.json());
+app.use(cors());  // Habilitar CORS para todas las solicitudes
 
-app.post('/scrape-video', async (req, res) => {
-  const { url } = req.body;
+app.get('/api', async (req, res) => {
+  const { url } = req.query;  // Obtener la URL desde los parámetros de la URL
 
   if (!url) {
-    return res.status(400).json({ error: 'Falta la URL del video' });
+    return res.status(400).json({ error: 'Falta el parámetro "url"' });
   }
 
   try {
