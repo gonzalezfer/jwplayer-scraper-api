@@ -2,10 +2,6 @@
   "name": "jwplayer-scraper-api",
   "version": "1.0.0",
   "description": "API para raspar enlaces de medios de JW Player",
-  "main": "index.js",
-  "scripts": {
-    "start": "node index.js"
-  },
   "dependencies": {
     "express": "^4.17.1",
     "jwplayer-scraper": "^1.0.0",
